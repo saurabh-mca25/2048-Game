@@ -501,7 +501,7 @@ void Renderer2048::drawBlocks(float dt)
             std::string text = std::to_string(b->num);
 
             float baseSize = blockSize / 2.2f;
-            float fontSize = baseSize - (text.length() - 2) * (blockSize * 0.08f);
+            float fontSize = baseSize - (static_cast<int>(text.length()) - 2) * (blockSize * 0.08f);
 
             Vector2 size = MeasureTextEx(font, text.c_str(), fontSize, 0);
             Vector2 pos{b->x + (blockSize - size.x) / 2.0f,
